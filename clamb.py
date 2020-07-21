@@ -19,5 +19,11 @@ soup = BeautifulSoup(resp.text, 'html5lib')
 #     print(zxc)
 
 #用key-value取得網頁中的元素資料
-for qwe in soup.find_all('span',{'class':'waterfall_text'}):
-    print(qwe)
+# for qwe in soup.find_all('span',{'class':'waterfall_text'}):
+#     print(qwe)
+
+#使用stripped_strings留下純文字
+for report in soup.find_all('div','report_sort_box'):
+    # print(report)
+    for report in report.stripped_strings:
+        print(report)
